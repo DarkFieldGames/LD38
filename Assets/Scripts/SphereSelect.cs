@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SphereSelect : MonoBehaviour {
 
-	public Transform CurrentPrefab;
+	public GameObject CurrentPrefab;
 
 	// Use this for initialization
 	void Start () {

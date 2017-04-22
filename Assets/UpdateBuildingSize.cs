@@ -9,6 +9,8 @@ public class UpdateBuildingSize : MonoBehaviour {
 
 	public Int32 BuildingLevel;
 
+	public Int32 RingSize = 1;
+
 	private Int32 _currentBuildingLevel;
 
 	// Use this for initialization
@@ -48,7 +50,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 		if (currentBuildingLevel < 6)
 			return;
 
-		CreateBlockRing(2, center, currentBuildingLevel / 6);
+		CreateBlockRing(6, center, currentBuildingLevel / 6);
 	}
 
 	private void CreateBlockRing(Int32 numObjects, Vector3 center, Single size)
@@ -57,8 +59,8 @@ public class UpdateBuildingSize : MonoBehaviour {
 		{
 			var b = CreateBlock();
 			b.transform.SetParent(gameObject.transform, worldPositionStays: false);
-			b.transform.localPosition = Circle(center, 5.0f * (numObjects - 1), currentObject: i, count: numObjects);
-			b.transform.localScale += new Vector3 { y = size };
+			b.transform.localPosition = Circle(center, RingSize * numObjects, currentObject: i, count: numObjects);
+			b.transform.localScale += new Vector3 { y = size * 2 };
 		}
 	}
 
