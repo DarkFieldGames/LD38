@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class resources : MonoBehaviour {
+public class GameResources : MonoBehaviour {
 
 	// Define the resource variables
 	private float nextUpdateTime = 0.0f;

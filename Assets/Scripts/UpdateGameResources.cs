@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpdateResource : MonoBehaviour {
+public class UpdateGameResources : MonoBehaviour {
 
 //	private GameObject game_mech = GameObject.Find("GameMechanics");
 	private GameObject game_mech;	//	private GameObject GUIText = gameObject.name;
@@ -11,31 +11,31 @@ public class UpdateResource : MonoBehaviour {
 	private Text resource_text;
 
 	void Start () {
-		// game_mech = GameObject.FindObjectOfType (typeof(GameMechanics));
-		game_mech = GameObject.Find("GameMechanics");
+		game_mech = GameObject.FindGameObjectWithTag("GameMechanics");
 		resource_text = gameObject.GetComponent<Text> ();
 	}
 
+
 	// Update is called once per frame
 	void Update () {
-		if (gameObject.transform.parent.name == "OxygenText") {
-			resource_text.text = Mathf.RoundToInt(game_mech.GetComponent<resources>().Oxygen).ToString();
+		// 			GameResources oxygen = game_mech.GetComponent<GameResources>();
+		// resource_text.text = Mathf.RoundToInt (oxygen.Oxygen).ToString ();
+		/* GameRes = game_mech.GetComponent<GameResources>();
+		if (gameObject.transform.name == "OxygenText") {
+			resource_text.text = Mathf.RoundToInt (GameRes.Oxygen).ToString ();
 		} 
-/*		if (GUItext.GetComponentInParent<name> () == "EnergyText") 
-		{
-			text = Mathf.RoundToInt(game_mech.GetComponent<resources> ().Energy);
+		if (gameObject.transform.name == "EnergyText") {
+			resource_text.text = Mathf.RoundToInt (GameRes.Energy).ToString ();
 		} 
-		if ( GUItext.GetComponentInParent<name> () == "BiomassText")
-		{
-			text = Mathf.RoundToInt(game_mech.GetComponent<resources> ().Biomass);
+		if (gameObject.transform.name == "BiomassText") {
+			resource_text.text = Mathf.RoundToInt (GameRes.Biomass).ToString ();
+		} 
+		if (gameObject.transform.name == "SiliconText") {
+			resource_text.text = Mathf.RoundToInt (GameRes.Silicon).ToString ();
+		} 
+		if (gameObject.transform.name == "IronText") {
+			resource_text.text = Mathf.RoundToInt (GameRes.Iron).ToString ();
 		}
-		if ( GUItext.GetComponentInParent<name> () == "SiliconText")
-		{
-			text = Mathf.RoundToInt(game_mech.GetComponent<resources> ().Silicon);
-		}
-		if ( GUItext.GetComponentInParent<name> () == "IronText")
-		{
-			text = Mathf.RoundToInt(game_mech.GetComponent<resources> ().Iron);
-		} */
+		*/
 	}
 }
