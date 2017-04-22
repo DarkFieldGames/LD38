@@ -13,9 +13,11 @@ public class UpdateBuildingSize : MonoBehaviour {
 
 	private Int32 _currentBuildingLevel;
 
+	public float debugCircle;
+
 	// Use this for initialization
 	void Start () {
-		
+		debugCircle = 0.1f;
 	}
 	
 	// Update is called once per frame
@@ -51,6 +53,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 			return;
 
 		CreateBlockRing(6, center, currentBuildingLevel / 6);
+		AddCircle (0.125f * 2*Mathf.PI);
 	}
 
 	private void CreateBlockRing(Int32 numObjects, Vector3 center, Single size)
@@ -76,5 +79,17 @@ public class UpdateBuildingSize : MonoBehaviour {
 	private static GameObject CreateBlock()
 	{
 		return GameObject.CreatePrimitive(PrimitiveType.Cube);
+	}
+
+	private void AddCircle(float angleRadius)
+	{
+		float width = (7.0f/0.3f) * Mathf.Sin (angleRadius);
+		float depth = (7.0f/0.3f) * (Mathf.Cos (angleRadius)-1);
+
+		GameObject circle = GameObject.CreatePrimitive (PrimitiveType.Cylinder);
+		circle.transform.SetParent(gameObject.transform, worldPositionStays: false);
+		circle.transform.localPosition = Circle(new Vector3(0,depth,0), 0.0f, 1, 1);
+
+		circle.transform.localScale = new Vector3 (2*(width*1.05f), 0.1f, (2*width*1.05f));
 	}
 }
