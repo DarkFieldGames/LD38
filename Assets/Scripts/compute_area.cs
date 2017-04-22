@@ -18,12 +18,12 @@ public class compute_area : MonoBehaviour {
 	/// 
 	/// </summary> 
 
-	public float fRadius0 = 0.0;
-	public float fRadius1 = 0.0;
-	public float fDist = 0.0;
-	public float fDiff = 0.0;
-	public float fArea = 0.0;
-	public float fSat = 0.0;
+	public float fRadius0 = 0.0f;
+	public float fRadius1 = 0.0f;
+	public float fDist = 0.0f;
+	public float fDiff = 0.0f;
+	public float fArea = 0.0f;
+	public float fSat = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,29 +31,25 @@ public class compute_area : MonoBehaviour {
 	}
 
 	void Saturate(){
-		fSat = Mathf.Max (0, 
-			Mathf.Min (1.0,
-				((fDist - fDiff) / (fRadius0 + fRadius1 - fDiff))
-			)
-		);
+		fSat = Mathf.Max(0.0f, Mathf.Min(1.0f, ((fDist - fDiff) / (fRadius0 + fRadius1 - fDiff))));
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (fDist <= Mathf.Max (fRadius0, fRadius1) - Mathf.Min (fRadius0, fRadius1)) {
 			// one cap is completely inside the other
-			fArea = 6.283185308 - (6.283185308 * Mathf.Cos (Mathf.Min (fRadius0, fRadius1)));
+			fArea = 6.283185308f - (6.283185308f * Mathf.Cos (Mathf.Min (fRadius0, fRadius1)));
 
 		} else if (fDist >= fRadius0 + fRadius1) {
 			// no intersection exists
-			fArea = 0;
+			fArea = 0.0f;
 
 		} else {
 			// here we have an overlap
 			fDiff = Mathf.Abs(fRadius0 - fRadius1);
-			fSat = Saturate();
-			fArea = Mathf.SmoothStep (0.0, 1.0, fSat);
-			fArea *= 6.283185308 - (6.283185308 * Mathf.Cos (Mathf.Min (fRadius0, fRadius1)));
+			Saturate();
+			fArea = Mathf.SmoothStep (0.0f, 1.0f, fSat);
+			fArea *= 6.283185308f - (6.283185308f * Mathf.Cos (Mathf.Min (fRadius0, fRadius1)));
 		}
 
 	}
