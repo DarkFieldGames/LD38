@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4478236733982428}
   - component: {fileID: 114628326354337330}
   - component: {fileID: 135784183261775320}
+  - component: {fileID: 114574762416416818}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -36,11 +37,23 @@ Transform:
   m_GameObject: {fileID: 1215428601846700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114574762416416818
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215428601846700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4608fffa787df5d478b7546aca738810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  area: 0
 --- !u!114 &114628326354337330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MasterRadius: 1
   BuildingLevel: 1
-  BuildingColor: {r: 0.8455882, g: 0.11813366, b: 0.11813366, a: 0}
+  BuildingColor: {r: 1, g: 0.33088237, b: 0.33088237, a: 0}
   BuildingCube: {fileID: 1562030820694420, guid: 8a6705608451af243af8cc976583dd8b,
     type: 2}
   UpperRingRadius:

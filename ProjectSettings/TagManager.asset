@@ -6,6 +6,11 @@ TagManager:
   tags:
   - GameMechanics
   - Building
+  - OxygenBuilding
+  - IronBuilding
+  - EnergyBuilding
+  - BiomassBuilding
+  - SiliconBuilding
   layers:
   - Default
   - TransparentFX
