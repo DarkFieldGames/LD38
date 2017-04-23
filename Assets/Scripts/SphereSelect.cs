@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SphereSelect : MonoBehaviour {
 
 	public GameObject CurrentPrefab;
+
+	public float RadiusRatio = 1.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -25,10 +28,11 @@ public class SphereSelect : MonoBehaviour {
 
 		if(Physics.Raycast(ray, out hit, maxDistance: 1000, layerMask: 1 << 8))
 		{
+			var newVector = hit.point * RadiusRatio;
 
-			var o = Instantiate(CurrentPrefab);
-			o.transform.position = hit.point;
-			o.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+			var o = (GameObject) Instantiate(CurrentPrefab, newVector, Quaternion.FromToRotation(Vector3.up, hit.normal));
+			//o.transform.position = hit.point;
+			//o.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
 		}
 	}
