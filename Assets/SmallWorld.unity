@@ -449,6 +449,7 @@ GameObject:
   - component: {fileID: 435756878}
   - component: {fileID: 435756880}
   - component: {fileID: 435756879}
+  - component: {fileID: 435756881}
   m_Layer: 5
   m_Name: bureaucracyButton
   m_TagString: Untagged
@@ -507,6 +508,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 435756877}
+--- !u!114 &435756881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435756877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &491305304
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +953,7 @@ GameObject:
   - component: {fileID: 925250525}
   - component: {fileID: 925250527}
   - component: {fileID: 925250526}
+  - component: {fileID: 925250528}
   m_Layer: 5
   m_Name: ironButton
   m_TagString: Untagged
@@ -999,6 +1012,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 925250524}
+--- !u!114 &925250528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 925250524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1211482692 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e1fb85304eb127643ab4907c6cf9b9bb, type: 3}
@@ -1025,6 +1049,7 @@ GameObject:
   - component: {fileID: 1385474559}
   - component: {fileID: 1385474561}
   - component: {fileID: 1385474560}
+  - component: {fileID: 1385474562}
   m_Layer: 5
   m_Name: siliconButton
   m_TagString: Untagged
@@ -1083,6 +1108,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1385474558}
+--- !u!114 &1385474562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385474558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1399450933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1319,7 @@ GameObject:
   - component: {fileID: 1424462382}
   - component: {fileID: 1424462384}
   - component: {fileID: 1424462383}
+  - component: {fileID: 1424462385}
   m_Layer: 5
   m_Name: energyButton
   m_TagString: Untagged
@@ -1341,6 +1378,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1424462381}
+--- !u!114 &1424462385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424462381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1478087753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1464,7 @@ GameObject:
   - component: {fileID: 1605937648}
   - component: {fileID: 1605937650}
   - component: {fileID: 1605937649}
+  - component: {fileID: 1605937651}
   m_Layer: 5
   m_Name: oxygenButton
   m_TagString: Untagged
@@ -1474,6 +1523,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605937647}
+--- !u!114 &1605937651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1605937647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692127057 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1049974631880998, guid: 9c8cb6ccc87af9c4596ce56b403ea5ec,
@@ -1511,6 +1571,7 @@ GameObject:
   - component: {fileID: 1718901545}
   - component: {fileID: 1718901547}
   - component: {fileID: 1718901546}
+  - component: {fileID: 1718901548}
   m_Layer: 5
   m_Name: biomassButton
   m_TagString: Untagged
@@ -1569,6 +1630,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1718901544}
+--- !u!114 &1718901548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1718901544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bdb06c805eaa74aabec564267c625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1824823434
 GameObject:
   m_ObjectHideFlags: 0
