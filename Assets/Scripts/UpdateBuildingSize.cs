@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 public class UpdateBuildingSize : MonoBehaviour {
-
+	private const String BuildingTag = "Building";
 	public float MasterRadius = 1;
 	public Int32 BuildingLevel = 1;
 
@@ -16,6 +16,8 @@ public class UpdateBuildingSize : MonoBehaviour {
 	private Int32 _currentBuildingLevel = 0;
 
 	public float[] UpperRingRadius = new float[] { 2f, 3f };
+
+	public Single CircleAngleRadius = 1.0f;
 
 
 	// Use this for initialization
@@ -49,6 +51,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 		{
 			case 1:
 				CreateBlock();
+				AddCircle(CircleAngleRadius);
 				break;
 			case 3:
 				CreateBlockRing(numObjects: 3, buildingRadius: MasterRadius * UpperRingRadius[0]);
@@ -61,7 +64,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 
 	private void GrowExisting(Int32 growingBuildingLevel)
 	{
-		foreach(Transform t in transform)
+		foreach(Transform t in transform.Cast<Transform>().Where(t => t.CompareTag(BuildingTag)))
 		{
 			Single mean = 1f - (growingBuildingLevel * 0.1f);
 			Single stdev = 0.5f;
@@ -78,7 +81,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 		}
 	}
 
-	Vector3 Circle (float radius, Int32 currentSegment, Int32 count ){
+	Vector3 Circle (float radius, Int32 currentSegment, Int32 count){
 		float ang = GetBellCurve(mean: currentSegment * 360 / count, stdev: 10);
 		return new Vector3
 		{
@@ -96,7 +99,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 		return cube;
 	}
 
-	System.Random rand = new System.Random();
+	private System.Random rand = new System.Random();
 
 	private float GetBellCurve(float mean = 5f, float stdev = 2.0f)
 	{
@@ -104,5 +107,17 @@ public class UpdateBuildingSize : MonoBehaviour {
 		double u2 = 1.0-rand.NextDouble();
 		double randStdNormal = Math.Sqrt(-2.0 * Math.Log(u1)) * Math.Sin(2.0 * Math.PI * u2); //random normal(0,1)
 		return Convert.ToSingle(mean + stdev * randStdNormal);
+	}
+
+	private void AddCircle(float angleRadius)
+	{
+		float width = (7.0f/0.3f) * Mathf.Sin (angleRadius);
+		float depth = (7.0f/0.3f) * (Mathf.Cos (angleRadius)-1);
+
+		GameObject circle = GameObject.CreatePrimitive (PrimitiveType.Cylinder);
+		circle.transform.SetParent(gameObject.transform, worldPositionStays: false);
+		circle.transform.localPosition = new Vector3(0,depth,0) + Circle( 0.0f, 1, 1);
+
+		circle.transform.localScale = new Vector3 (2*(width*1.05f), 0.1f, (2*width*1.05f));
 	}
 }
