@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4478236733982428}
   - component: {fileID: 114628326354337330}
+  - component: {fileID: 135784183261775320}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -60,3 +61,15 @@ MonoBehaviour:
   - 2
   - 3
   CircleAngleRadius: 0.3
+--- !u!135 &135784183261775320
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1215428601846700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 0, y: 0, z: 0}

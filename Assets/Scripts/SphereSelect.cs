@@ -17,6 +17,7 @@ public class SphereSelect : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+		bool dont_generate = false;
 		if (!Input.GetMouseButtonDown(0))
 			return;
 
@@ -30,7 +31,26 @@ public class SphereSelect : MonoBehaviour {
 		{
 			var newVector = hit.point * RadiusRatio;
 
-			var o = (GameObject) Instantiate(CurrentPrefab, newVector, Quaternion.FromToRotation(Vector3.up, hit.normal));
+
+			// check if there is not another city nearby.
+			Debug.Log(hit.collider);
+			if (Physics.Raycast(ray, out hit)) {
+				Debug.Log(hit.collider.gameObject.name);
+				if (hit.collider.gameObject.name != "BetterSphere") {
+					dont_generate = true;
+				}
+			}
+			// control the radius here from the trigger collider
+			if(hit.collider.isTrigger)
+			{
+					dont_generate = true;
+			}
+			// end check
+				
+			if (dont_generate == false) 
+			{
+			    var o = (GameObject) Instantiate(CurrentPrefab, newVector, Quaternion.FromToRotation(Vector3.up, hit.normal));
+			}
 			//o.transform.position = hit.point;
 			//o.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
 
