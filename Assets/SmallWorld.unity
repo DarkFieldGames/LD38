@@ -275,7 +275,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114537411513162144, guid: 9c8cb6ccc87af9c4596ce56b403ea5ec,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114537411513162144, guid: 9c8cb6ccc87af9c4596ce56b403ea5ec, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 9c8cb6ccc87af9c4596ce56b403ea5ec, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &178391621
@@ -1470,6 +1476,33 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1605937647}
+--- !u!1 &1692127057 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1049974631880998, guid: 9c8cb6ccc87af9c4596ce56b403ea5ec,
+    type: 2}
+  m_PrefabInternal: {fileID: 172298730}
+--- !u!114 &1692127060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1692127057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f53234717c242247b78afb7b75fdd8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updatePeriod: 0.1
+  Oxygen: 0
+  Biomass: 0
+  Iron: 0
+  Silicon: 0
+  Energy: 0
+  MaxOxygen: 10
+  MaxBiomass: 10
+  MaxIron: 10
+  MaxSilicon: 10
+  MaxEnergy: 10
 --- !u!1 &1718901544
 GameObject:
   m_ObjectHideFlags: 0

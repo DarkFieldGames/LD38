@@ -18,24 +18,24 @@ public class UpdateGameResources : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		// 			GameResources oxygen = game_mech.GetComponent<GameResources>();
-		// resource_text.text = Mathf.RoundToInt (oxygen.Oxygen).ToString ();
-		/* GameRes = game_mech.GetComponent<GameResources>();
+		GameResources game_res = game_mech.GetComponent<GameResources>();
+//	    resource_text.text = Mathf.RoundToInt (oxygen.Oxygen).ToString ();
+//		Debug.Log(resource_text.text);
 		if (gameObject.transform.name == "OxygenText") {
-			resource_text.text = Mathf.RoundToInt (GameRes.Oxygen).ToString ();
+			resource_text.text = Mathf.RoundToInt (game_res.Oxygen).ToString ();
 		} 
 		if (gameObject.transform.name == "EnergyText") {
-			resource_text.text = Mathf.RoundToInt (GameRes.Energy).ToString ();
+			resource_text.text = Mathf.RoundToInt (game_res.Energy).ToString ();
 		} 
 		if (gameObject.transform.name == "BiomassText") {
-			resource_text.text = Mathf.RoundToInt (GameRes.Biomass).ToString ();
+			resource_text.text = Mathf.RoundToInt (game_res.Biomass).ToString ();
 		} 
 		if (gameObject.transform.name == "SiliconText") {
-			resource_text.text = Mathf.RoundToInt (GameRes.Silicon).ToString ();
+			resource_text.text = Mathf.RoundToInt (game_res.Silicon).ToString ();
 		} 
 		if (gameObject.transform.name == "IronText") {
-			resource_text.text = Mathf.RoundToInt (GameRes.Iron).ToString ();
+			resource_text.text = Mathf.RoundToInt (game_res.Iron).ToString ();
 		}
-		*/
+
 	}
 }
