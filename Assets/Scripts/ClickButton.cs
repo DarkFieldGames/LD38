@@ -12,6 +12,7 @@ public class ClickButton : MonoBehaviour, IPointerDownHandler {
 	}
 
 	public void OnPointerDown (PointerEventData eventData){
+		// TODO: prevent the placement of a building when this is clicked
 		Debug.Log (this.gameObject.name + " Was Clicked.");
 	}
 
