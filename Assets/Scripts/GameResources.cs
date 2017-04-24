@@ -112,14 +112,14 @@ public class GameResources : MonoBehaviour {
 				}
 
 				if (Level > 6.0){
-					MinRange (Level-3);
-					MaxRange (Level-3);
+					MinRange (Level-2);
+					MaxRange (Level-2);
 					MaxSilicon = MaxSilicon + Random.Range (min_range, max_range);					
 				}
 
 				if (Level > 9.0){
-					MinRange (Level-4);
-					MaxRange (Level-4);
+					MinRange (Level-3);
+					MaxRange (Level-3);
 					MaxEnergy = MaxEnergy + Random.Range (min_range, max_range);					
 				}
 
