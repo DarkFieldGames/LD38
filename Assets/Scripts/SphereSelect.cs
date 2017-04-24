@@ -30,9 +30,7 @@ public class SphereSelect : MonoBehaviour {
 		{
 			var newVector = hit.point * RadiusRatio;
 
-			var o = (GameObject) Instantiate(CurrentPrefab, newVector, Quaternion.FromToRotation(Vector3.up, hit.normal));
-			//o.transform.position = hit.point;
-			//o.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+			Instantiate(CurrentPrefab, newVector, Quaternion.FromToRotation(Vector3.up, hit.normal));
 
 		}
 	}

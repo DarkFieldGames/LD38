@@ -56,6 +56,9 @@ MonoBehaviour:
   BuildingColor: {r: 0.8455882, g: 0.11813366, b: 0.11813366, a: 0}
   BuildingCube: {fileID: 1562030820694420, guid: 8a6705608451af243af8cc976583dd8b,
     type: 2}
+  BuildingProjector: {fileID: 1631769630121280, guid: 17e7ef6177c82e843b452a49953cf742,
+    type: 2}
+  ProjectorHeight: 11
   UpperRingRadius:
   - 2
   - 3
