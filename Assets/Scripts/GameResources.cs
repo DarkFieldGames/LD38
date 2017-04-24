@@ -18,11 +18,11 @@ public class GameResources : MonoBehaviour {
 	public float ResourceFactor = 1.0f;
 
     // Define the maximum resources required to win
-	public float MaxOxygen = 10.0f;
-	public float MaxBiomass = 10.0f;
-	public float MaxIron = 10.0f;
-	public float MaxSilicon = 10.0f;
-	public float MaxEnergy = 10.0f;
+	public float MaxOxygen = 5.0f;
+	public float MaxBiomass = 0.0f;
+	public float MaxIron = 0.0f;
+	public float MaxSilicon = 0.0f;
+	public float MaxEnergy = 0.0f;
 
 	private GameObject[] oxygenBuildings;
 	private GameObject[] ironBuildings;
@@ -51,16 +51,16 @@ public class GameResources : MonoBehaviour {
 				Oxygen += ((oxyBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor) / 20.0f);
 			}
 			foreach (GameObject iroBuild in ironBuildings) {
-				Iron += (iroBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);
+				Iron += (iroBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor  / 20.0f);
 			}
 			foreach (GameObject bioBuild in biomassBuildings) {
-				Biomass += (bioBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);
+				Biomass += (bioBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor  / 20.0f );
 			}
 			foreach (GameObject silBuild in siliconBuildings) {
-				Silicon += (silBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);
+				Silicon += (silBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor  / 20.0f );
 			}
 			foreach (GameObject engBuild in energyBuildings) {
-				Energy += (engBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);
+				Energy += (engBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor  / 20.0f );
 			}
 			//Biomass += 0.1f;
 			//Iron += 0.1f;

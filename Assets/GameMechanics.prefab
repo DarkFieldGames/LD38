@@ -73,8 +73,8 @@ MonoBehaviour:
   Timer: 60
   Level: 1
   ResourceFactor: 0.0001
-  MaxOxygen: 10
-  MaxBiomass: 10
-  MaxIron: 10
-  MaxSilicon: 10
-  MaxEnergy: 10
+  MaxOxygen: 5
+  MaxBiomass: 0
+  MaxIron: 0
+  MaxSilicon: 0
+  MaxEnergy: 0
