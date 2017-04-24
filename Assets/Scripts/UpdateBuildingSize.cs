@@ -12,6 +12,9 @@ public class UpdateBuildingSize : MonoBehaviour {
 	public Color BuildingColor;
 
 	public GameObject BuildingCube;
+	public GameObject BuildingProjector;
+
+	public float ProjectorHeight = 1.0f;
 
 	private Int32 _currentBuildingLevel = 0;
 
@@ -51,7 +54,7 @@ public class UpdateBuildingSize : MonoBehaviour {
 		{
 			case 1:
 				CreateBlock();
-				AddCircle(CircleAngleRadius);
+				CreateProjector(ProjectorHeight);
 				break;
 			case 3:
 				CreateBlockRing(numObjects: 3, buildingRadius: MasterRadius * UpperRingRadius[0]);
@@ -60,6 +63,15 @@ public class UpdateBuildingSize : MonoBehaviour {
 				CreateBlockRing(numObjects: 7, buildingRadius: MasterRadius * UpperRingRadius[1]);
 				break;
 		}
+	}
+
+	private void CreateProjector(Single projectorHeight)
+	{
+		var circle = (GameObject) Instantiate(BuildingProjector, parent: gameObject.transform, instantiateInWorldSpace: false);
+
+		circle.transform.localPosition = new Vector3 { y = projectorHeight };
+
+		circle.GetComponent<CircleProjector>().SetMasterColor(BuildingColor);
 	}
 
 	private void GrowExisting(Int32 growingBuildingLevel)
@@ -109,13 +121,14 @@ public class UpdateBuildingSize : MonoBehaviour {
 		return Convert.ToSingle(mean + stdev * randStdNormal);
 	}
 
-	private void AddCircle(float angleRadius)
+	private void CreateCircle(float angleRadius)
 	{
 		float width = (7.0f/0.3f) * Mathf.Sin (angleRadius);
 		float depth = (7.0f/0.3f) * (Mathf.Cos (angleRadius)-1);
 
-		GameObject circle = GameObject.CreatePrimitive (PrimitiveType.Cylinder);
-		circle.transform.SetParent(gameObject.transform, worldPositionStays: false);
+		var circle = (GameObject) Instantiate(null, parent: gameObject.transform, instantiateInWorldSpace: false);
+
+		circle.GetComponent<SetShaderValues>().ShaderColor = BuildingColor;
 		circle.transform.localPosition = new Vector3(0,depth,0) + Circle( 0.0f, 1, 1);
 
 		circle.transform.localScale = new Vector3 (2*(width*1.05f), 0.1f, (2*width*1.05f));
