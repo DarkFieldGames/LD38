@@ -78,7 +78,7 @@ public class SphereSelect : MonoBehaviour {
 				{
 						dont_generate = true;
 					    if (hit.collider.gameObject.name != "BetterSphere") {
-							if (building_type.resource == "Energy"){
+							if (building_type.resource == "Delete"){
 								Destroy (hit.collider.gameObject);
 								nextPlaceTime = Time.time + placePeriod;
 							}
