@@ -64,13 +64,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f53234717c242247b78afb7b75fdd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updatePeriod: 0.1
+  updatePeriod: 0.5
   Oxygen: 0
   Biomass: 0
   Iron: 0
   Silicon: 0
   Energy: 0
-  ResourceFactor: 0.1
+  Timer: 60
+  Level: 1
+  ResourceFactor: 0.0001
   MaxOxygen: 10
   MaxBiomass: 10
   MaxIron: 10
