@@ -34,7 +34,21 @@ public class GameResources : MonoBehaviour {
 	private GameObject[] siliconBuildings;
 
 	void Start () {
-		
+
+		Oxygen = 0.0f;
+		Biomass = 0.0f;
+		Iron = 0.0f;
+		Silicon = 0.0f;
+		Energy = 0.0f;
+		Timer = 60.0f;
+		Level = 1.0f;
+		MaxOxygen = 5.0f;
+		MaxBiomass = 0.0f;
+		MaxIron = 0.0f;
+		MaxSilicon = 0.0f;
+		MaxEnergy = 0.0f;
+
+
 	}
 
 	void MinRange(float level){
@@ -90,22 +104,22 @@ public class GameResources : MonoBehaviour {
 				MaxRange (Level);
 				MaxIron = MaxIron + Random.Range (min_range, max_range);
 
-				if (Level > 4.0) {
-					MinRange (Level);
-					MaxRange (Level);
+				if (Level > 3.0) {
+					MinRange (Level-1);
+					MaxRange (Level-1);
 					MaxBiomass = MaxBiomass + Random.Range (min_range, max_range);
 
 				}
 
-				if (Level > 7.0){
-					MinRange (Level);
-					MaxRange (Level);
+				if (Level > 6.0){
+					MinRange (Level-3);
+					MaxRange (Level-3);
 					MaxSilicon = MaxSilicon + Random.Range (min_range, max_range);					
 				}
 
-				if (Level > 12.0){
-					MinRange (Level);
-					MaxRange (Level);
+				if (Level > 9.0){
+					MinRange (Level-4);
+					MaxRange (Level-4);
 					MaxEnergy = MaxEnergy + Random.Range (min_range, max_range);					
 				}
 
