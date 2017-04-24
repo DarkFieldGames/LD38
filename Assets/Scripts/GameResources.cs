@@ -6,14 +6,16 @@ public class GameResources : MonoBehaviour {
 
 	// Define the resource variables
 	private float nextUpdateTime = 0.0f;
-	public float updatePeriod = 0.1f;
+	public float updatePeriod = 0.5f;
 	public float Oxygen = 0.0f;
 	public float Biomass = 0.0f;
 	public float Iron = 0.0f;
 	public float Silicon = 0.0f;
 	public float Energy = 0.0f;
+	public float Timer = 60.0f;
+	public float Level = 1.0f;
 
-	public float ResourceFactor = 3.0f;
+	public float ResourceFactor = 1.0f;
 
     // Define the maximum resources required to win
 	public float MaxOxygen = 10.0f;
@@ -36,6 +38,7 @@ public class GameResources : MonoBehaviour {
 	void Update () {
 		if (Time.time > nextUpdateTime) {
 			nextUpdateTime += updatePeriod;
+			Timer -= updatePeriod;
 
 			oxygenBuildings = GameObject.FindGameObjectsWithTag ("OxygenBuilding");
 			ironBuildings = GameObject.FindGameObjectsWithTag ("IronBuilding");
@@ -45,7 +48,7 @@ public class GameResources : MonoBehaviour {
 
 			// search for Oxygen Building List.
 			foreach (GameObject oxyBuild in oxygenBuildings) {
-				Oxygen += (oxyBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);
+				Oxygen += ((oxyBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor) / 20.0f);
 			}
 			foreach (GameObject iroBuild in ironBuildings) {
 				Iron += (iroBuild.GetComponent<ComputeResourceArea>().area * ResourceFactor);

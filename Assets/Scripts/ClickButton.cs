@@ -33,6 +33,9 @@ public class ClickButton : MonoBehaviour, IPointerDownHandler {
 		if (this.gameObject.name == "siliconButton") {
 			building_type.resource = "Silicon";
 		}
+		if (this.gameObject.name == "bureaucracyButton") {
+			building_type.resource = "Delete";
+		}
 
 	}
 

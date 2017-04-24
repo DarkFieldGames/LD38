@@ -37,5 +37,25 @@ public class UpdateGameResources : MonoBehaviour {
 			resource_text.text = Mathf.RoundToInt (game_res.Iron).ToString ();
 		}
 
+		if (gameObject.transform.name == "OxygenMission") {
+			resource_text.text = Mathf.RoundToInt (game_res.MaxOxygen).ToString ();
+		} 
+		if (gameObject.transform.name == "EnergyMission") {
+			resource_text.text = Mathf.RoundToInt (game_res.MaxEnergy).ToString ();
+		} 
+		if (gameObject.transform.name == "BiomassMission") {
+			resource_text.text = Mathf.RoundToInt (game_res.MaxBiomass).ToString ();
+		} 
+		if (gameObject.transform.name == "SiliconMission") {
+			resource_text.text = Mathf.RoundToInt (game_res.MaxSilicon).ToString ();
+		} 
+		if (gameObject.transform.name == "IronMission") {
+			resource_text.text = Mathf.RoundToInt (game_res.MaxIron).ToString ();
+		}
+		if (gameObject.transform.name == "Timer") {
+			resource_text.text = Mathf.RoundToInt (game_res.Timer).ToString ();
+		}
+
+
 	}
 }
