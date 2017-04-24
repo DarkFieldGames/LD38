@@ -26,6 +26,5 @@ public class ComputeResourceArea : MonoBehaviour {
 		spherical_angle = Mathf.Asin((cap_radius / 1.0f));
         // see maths.png.. area of spherical cap surface are thing
 		area = 4 * Mathf.PI * Mathf.Pow(cap_radius, 2.0f) * (1.0f - Mathf.Cos(spherical_angle));
-		Debug.Log (cap_radius);
 	}
 }
