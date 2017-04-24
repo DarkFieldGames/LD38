@@ -55,6 +55,9 @@ public class UpdateGameResources : MonoBehaviour {
 		if (gameObject.transform.name == "Timer") {
 			resource_text.text = Mathf.RoundToInt (game_res.Timer).ToString ();
 		}
+		if (gameObject.transform.name == "Level") {
+			resource_text.text = Mathf.RoundToInt (game_res.Level).ToString ();
+		}
 
 
 	}
