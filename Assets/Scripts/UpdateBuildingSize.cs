@@ -22,10 +22,12 @@ public class UpdateBuildingSize : MonoBehaviour {
 
 	public Single CircleAngleRadius = 1.0f;
 
+	public float BuildingUpdatePeriod = 3f;
+
 
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Increase", 1f, 0.5f);
+		InvokeRepeating("Increase", 1f, BuildingUpdatePeriod);
 	}
 
 	void Increase()
